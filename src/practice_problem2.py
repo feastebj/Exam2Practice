@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Benjamin Feaster.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,27 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+    s1 = [2, 10, 5, -24, 7]
+    s2 = [3, 11, 4, -23, 6]
+    s3 = [4, 12, 3, -22, 5]
+    s4 = [5, 13, 2, -21, 4]
+
+    delta1 = 1
+    delta2 = 2
+    delta3 = 3
+    delta4 = -1
+
+    t1 = practice_problem2a(s1, delta1)
+    print(t1)
+
+    t2 = practice_problem2a(s2, delta2)
+    print(t2)
+
+    t3 = practice_problem2a(s3, delta3)
+    print(t3)
+
+    t4 = practice_problem2a(s4, delta4)
+    print(t4)
 
 
 def practice_problem2a(sequence, delta):
@@ -76,13 +97,18 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+
+    new_list = []
+    for k in range(len(sequence)):
+        new_list = new_list + [sequence[k] + delta]
+    return list(sequence)
 
 
 def run_test_practice_problem2b():
@@ -178,6 +204,15 @@ def practice_problem2b(sequence):
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
 
+    empty_string = ''
+
+    for k in range(len(sequence)):
+        word = sequence[k]
+        if len(word) > 0:
+            first_letter = str(word[0])
+            empty_string = empty_string + first_letter
+
+    return empty_string
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
